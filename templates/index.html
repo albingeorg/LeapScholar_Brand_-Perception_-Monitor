@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LeapScholar Brand Monitor</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>LeapScholar - Brand Perception Monitor</h1>
+
+  <h2>Sentiment Summary</h2>
+  <img src="{{ url_for('static', filename='sentiment_pie.png') }}" width="400"/>
+
+  <h2>Mentions by Platform</h2>
+  <img src="{{ url_for('static', filename='platform_bar.png') }}" width="600"/>
+
+  <h2>Word Cloud</h2>
+  <img src="{{ url_for('static', filename='wordcloud.png') }}" width="600"/>
+
+  <h2>Mentions Table</h2>
+  <table>
+    <tr><th>Source</th><th>Text</th><th>Sentiment</th></tr>
+    {% for row in df %}
+      <tr>
+        <td>{{ row['Source'] }}</td>
+        <td>{{ row['Text'] }}</td>
+        <td>{{ row['Sentiment'] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

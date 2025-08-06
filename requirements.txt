@@ -1,0 +1,7 @@
+flask
+gnewsclient
+praw
+textblob
+matplotlib
+wordcloud
+pandas
